@@ -5,8 +5,14 @@ import ListBooks from './components/ListBooks'
 
 class BooksApp extends Component {
   state = {
-    books: []
+    books: [],
   };
+
+  getBookshelf = (book) => {
+    const currentBook = this.state.books.find(d => d.id === book)
+    if (currentBook) return currentBook.shelf
+    return 'none'
+  }
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
@@ -17,10 +23,17 @@ class BooksApp extends Component {
   }
 
   render() {
+    const currentlyReading = this.state.books.filter(book => book.shelf === 'currentlyReading')
+    const wantToRead = this.state.books.filter(book => book.shelf === 'wantToRead')
+    const read = this.state.books.filter(book => book.shelf === 'read')
     return (
       <div className="app">
         <ListBooks
           books={this.state.books}
+          currentlyReading={currentlyReading}
+          wantToRead={wantToRead}
+          read={read}
+          getBookshelf={this.getBookshelf}
         />
       </div>
     )

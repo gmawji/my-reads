@@ -11,7 +11,19 @@ function ListBooks(props) {
       <div className="list-books-content">
         <div>
           <Bookshelf 
-            books={props.books}
+            books={props.currentlyReading}
+            shelfTitle='Currently Reading'
+            getBookshelf={props.getBookshelf}
+          />
+          <Bookshelf 
+            books={props.wantToRead}
+            shelfTitle='Want To Read'
+            getBookshelf={props.getBookshelf}
+          />
+          <Bookshelf 
+            books={props.read}
+            shelfTitle='Read'
+            getBookshelf={props.getBookshelf}
           />
         </div>
       </div>

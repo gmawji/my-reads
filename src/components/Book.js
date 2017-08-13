@@ -10,11 +10,11 @@ function Book (props) {
             width: 128,
             height: 193,
             backgroundImage:
-              `url($)`
+              `url(${props.book.imageLinks.thumbnail})`
           }}
         />
         <div className="book-shelf-changer">
-          <select>
+          <select defaultValue={ props.getBookshelf(props.book.id) }>
             <option value="none" disabled>
               Move to...
             </option>
