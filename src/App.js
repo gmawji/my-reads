@@ -5,10 +5,7 @@ import ListBooks from './components/ListBooks'
 
 class BooksApp extends Component {
   state = {
-    books: [],
-
-    // TODO: use url for routing
-    showSearchPage: false
+    books: []
   };
 
   componentDidMount() {
