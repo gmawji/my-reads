@@ -2,7 +2,7 @@ import React from "react";
 import Bookshelf from './Bookshelf'
 
 
-function ListBooks() {
+function ListBooks(props) {
   return (
     <div className="list-books">
       <div className="list-books-title">
@@ -10,7 +10,9 @@ function ListBooks() {
       </div>
       <div className="list-books-content">
         <div>
-          <Bookshelf />
+          <Bookshelf 
+            books={props.books}
+          />
         </div>
       </div>
     </div>
