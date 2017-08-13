@@ -14,16 +14,19 @@ function ListBooks(props) {
             books={props.currentlyReading}
             shelfTitle='Currently Reading'
             getBookshelf={props.getBookshelf}
+            changeBookshelf={props.changeBookshelf}
           />
           <Bookshelf 
             books={props.wantToRead}
             shelfTitle='Want To Read'
             getBookshelf={props.getBookshelf}
+            changeBookshelf={props.changeBookshelf}
           />
           <Bookshelf 
             books={props.read}
             shelfTitle='Read'
             getBookshelf={props.getBookshelf}
+            changeBookshelf={props.changeBookshelf}
           />
         </div>
       </div>

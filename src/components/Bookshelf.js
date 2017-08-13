@@ -12,6 +12,7 @@ function Bookshelf(props) {
               <Book 
                 book={book}
                 getBookshelf={props.getBookshelf}
+                changeBookshelf={props.changeBookshelf}
               />
             </li>
           ))}

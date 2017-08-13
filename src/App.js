@@ -5,7 +5,7 @@ import ListBooks from './components/ListBooks'
 
 class BooksApp extends Component {
   state = {
-    books: [],
+    books: []
   };
 
   getBookshelf = (book) => {
@@ -22,6 +22,16 @@ class BooksApp extends Component {
     })
   }
 
+  changeBookshelf = (e, book) => {
+    BooksAPI.update(book, e).then(() => {
+      book.shelf = e
+
+      this.setState(state => ({
+        books: state.books.filter(d => d.id !== book.id).concat([ book ])
+      }))
+    })
+  }
+
   render() {
     const currentlyReading = this.state.books.filter(book => book.shelf === 'currentlyReading')
     const wantToRead = this.state.books.filter(book => book.shelf === 'wantToRead')
@@ -34,6 +44,7 @@ class BooksApp extends Component {
           wantToRead={wantToRead}
           read={read}
           getBookshelf={this.getBookshelf}
+          changeBookshelf={this.changeBookshelf}
         />
       </div>
     )
