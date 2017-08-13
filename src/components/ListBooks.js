@@ -1,6 +1,5 @@
 import React from "react";
-import Bookshelf from './Bookshelf'
-
+import Bookshelf from "./Bookshelf";
 
 function ListBooks(props) {
   return (
@@ -10,21 +9,21 @@ function ListBooks(props) {
       </div>
       <div className="list-books-content">
         <div>
-          <Bookshelf 
+          <Bookshelf
             books={props.currentlyReading}
-            shelfTitle='Currently Reading'
+            shelfTitle="Currently Reading"
             getBookshelf={props.getBookshelf}
             changeBookshelf={props.changeBookshelf}
           />
-          <Bookshelf 
+          <Bookshelf
             books={props.wantToRead}
-            shelfTitle='Want To Read'
+            shelfTitle="Want To Read"
             getBookshelf={props.getBookshelf}
             changeBookshelf={props.changeBookshelf}
           />
-          <Bookshelf 
+          <Bookshelf
             books={props.read}
-            shelfTitle='Read'
+            shelfTitle="Read"
             getBookshelf={props.getBookshelf}
             changeBookshelf={props.changeBookshelf}
           />

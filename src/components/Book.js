@@ -1,7 +1,7 @@
 import React from "react";
 
-function Book (props) {
-  return(
+function Book(props) {
+  return (
     <div className="book">
       <div className="book-top">
         <div
@@ -9,12 +9,14 @@ function Book (props) {
           style={{
             width: 128,
             height: 193,
-            backgroundImage:
-              `url(${props.book.imageLinks.thumbnail})`
+            backgroundImage: `url(${props.book.imageLinks.thumbnail})`
           }}
         />
         <div className="book-shelf-changer">
-          <select defaultValue={ props.getBookshelf(props.book.id) } onChange={(e) => props.changeBookshelf(e.target.value, props.book)}> 
+          <select
+            defaultValue={props.getBookshelf(props.book.id)}
+            onChange={e => props.changeBookshelf(e.target.value, props.book)}
+          >
             <option value="none" disabled>
               Move to...
             </option>
@@ -34,7 +36,7 @@ function Book (props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Book;
