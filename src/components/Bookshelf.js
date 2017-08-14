@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import Book from "./Book";
 
 function Bookshelf(props) {
@@ -21,10 +22,7 @@ function Bookshelf(props) {
         </ol>
       </div>
       <div className="open-search">
-        {/* TODO: Change to Link to */}
-        <a onClick={() => this.setState({ showSearchPage: true })}>
-          Add a book
-        </a>
+        <Link to="/search">Add a book</Link>
       </div>
     </div>
   );
