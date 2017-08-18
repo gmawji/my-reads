@@ -7,7 +7,8 @@ import Search from './components/Search'
 
 class BooksApp extends Component {
   state = {
-    books: []
+    books: [],
+    bookSearch: []
   };
 
   getBookshelf = book => {
@@ -20,7 +21,7 @@ class BooksApp extends Component {
     BooksAPI.getAll().then(books => {
       this.setState({ books });
       // Check to make sure we setState properly.
-      console.log(this.state.books.map(books => books));
+      // console.log(this.state.books.map(books => books));
     });
   }
 
@@ -33,6 +34,20 @@ class BooksApp extends Component {
       }));
     });
   };
+
+  searchBooks = (event) => {
+    let query = event.target.value
+    if (query) {
+      BooksAPI.search(query, 20).then((bookSearch) => {
+        this.setState({bookSearch})
+        console.log(this.state.bookSearch.map(books => books));
+      })
+    }
+  }
+
+  updateQuery = (query) => {
+    this.setState({ query: query.trim() })
+  }
 
   render() {
     const currentlyReading = this.state.books.filter(
@@ -58,8 +73,10 @@ class BooksApp extends Component {
         </Route>
         <Route exact path="/search" render={() => (
           <Search 
+            books={this.state.bookSearch}
             getBookshelf={this.getBookshelf}
             changeBookshelf={this.changeBookshelf}
+            searchBooks={this.searchBooks}
           />
         )} > 
         </Route>
