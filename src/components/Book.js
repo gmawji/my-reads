@@ -1,6 +1,13 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 function Book(props) {
+
+  Book.PropTypes = {
+    book: PropTypes.array.isRequired,
+    getBookshelf: PropTypes.func.isRequired,
+    changeBookshelf: PropTypes.func.isRequired
+  }
   return (
     <div className="book">
       <div className="book-top">
