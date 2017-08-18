@@ -50,19 +50,21 @@ class BooksApp extends Component {
   }
 
   render() {
-    const currentlyReading = this.state.books.filter(
+    const {books, bookSearch} = this.state
+
+    const currentlyReading = books.filter(
       book => book.shelf === "currentlyReading"
     );
-    const wantToRead = this.state.books.filter(
+    const wantToRead = books.filter(
       book => book.shelf === "wantToRead"
     );
-    const read = this.state.books.filter(book => book.shelf === "read");
+    const read = books.filter(book => book.shelf === "read");
     
     return (
       <div className="app">
         <Route exact path="/" render={() => (
           <ListBooks
-            books={this.state.books}
+            books={books}
             currentlyReading={currentlyReading}
             wantToRead={wantToRead}
             read={read}
@@ -73,7 +75,7 @@ class BooksApp extends Component {
         </Route>
         <Route exact path="/search" render={() => (
           <Search 
-            books={this.state.bookSearch}
+            books={bookSearch}
             getBookshelf={this.getBookshelf}
             changeBookshelf={this.changeBookshelf}
             searchBooks={this.searchBooks}
