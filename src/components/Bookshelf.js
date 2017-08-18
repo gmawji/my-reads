@@ -1,17 +1,16 @@
 import React from "react";
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Book from "./Book";
 
 function Bookshelf(props) {
-
   Bookshelf.PropTypes = {
     getBookshelf: PropTypes.func.isRequired,
     changeBookshelf: PropTypes.func.changeBookshelf,
     books: PropTypes.array.isRequired,
     shelfTitle: PropTypes.string.isRequired
-  }
-  
+  };
+
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">

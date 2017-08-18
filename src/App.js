@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom'
+import { Route } from "react-router-dom";
 import * as BooksAPI from "./utils/BooksAPI";
 import "./App.css";
 import ListBooks from "./components/ListBooks";
-import Search from './components/Search'
+import Search from "./components/Search";
 
 class BooksApp extends Component {
   state = {
@@ -35,53 +35,55 @@ class BooksApp extends Component {
     });
   };
 
-  searchBooks = (event) => {
-    let query = event.target.value
+  searchBooks = event => {
+    let query = event.target.value;
     if (query) {
-      BooksAPI.search(query, 20).then((bookSearch) => {
-        this.setState({bookSearch})
+      BooksAPI.search(query, 20).then(bookSearch => {
+        this.setState({ bookSearch });
         console.log(this.state.bookSearch.map(books => books));
-      })
+      });
     }
-  }
+  };
 
-  updateQuery = (query) => {
-    this.setState({ query: query.trim() })
-  }
+  updateQuery = query => {
+    this.setState({ query: query.trim() });
+  };
 
   render() {
-    const {books, bookSearch} = this.state
+    const { books, bookSearch } = this.state;
 
     const currentlyReading = books.filter(
       book => book.shelf === "currentlyReading"
     );
-    const wantToRead = books.filter(
-      book => book.shelf === "wantToRead"
-    );
+    const wantToRead = books.filter(book => book.shelf === "wantToRead");
     const read = books.filter(book => book.shelf === "read");
-    
+
     return (
       <div className="app">
-        <Route exact path="/" render={() => (
-          <ListBooks
-            books={books}
-            currentlyReading={currentlyReading}
-            wantToRead={wantToRead}
-            read={read}
-            getBookshelf={this.getBookshelf}
-            changeBookshelf={this.changeBookshelf}
-          />
-        )}>
-        </Route>
-        <Route exact path="/search" render={() => (
-          <Search 
-            books={bookSearch}
-            getBookshelf={this.getBookshelf}
-            changeBookshelf={this.changeBookshelf}
-            searchBooks={this.searchBooks}
-          />
-        )} > 
-        </Route>
+        <Route
+          exact
+          path="/"
+          render={() =>
+            <ListBooks
+              books={books}
+              currentlyReading={currentlyReading}
+              wantToRead={wantToRead}
+              read={read}
+              getBookshelf={this.getBookshelf}
+              changeBookshelf={this.changeBookshelf}
+            />}
+        />
+        <Route
+          exact
+          path="/search"
+          render={() =>
+            <Search
+              books={bookSearch}
+              getBookshelf={this.getBookshelf}
+              changeBookshelf={this.changeBookshelf}
+              searchBooks={this.searchBooks}
+            />}
+        />
       </div>
     );
   }

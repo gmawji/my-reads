@@ -1,25 +1,30 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import Book from './Book'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import Book from "./Book";
 
 class Search extends Component {
-  
-  static PropTypes ={
+  static PropTypes = {
     books: PropTypes.array.isRequired,
     getBookshelf: PropTypes.func.isRequired,
     changeBookshelf: PropTypes.func.isRequired,
     searchBooks: PropTypes.func.isRequired
-  }
+  };
 
   render() {
-    const {getBookshelf, changeBookshelf, searchBooks, books} = this.props
-    return(
+    const { getBookshelf, changeBookshelf, searchBooks, books } = this.props;
+    return (
       <div className="search-books">
         <div className="search-books-bar">
-          <Link className="close-search" to="/">Close</Link>
+          <Link className="close-search" to="/">
+            Close
+          </Link>
           <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author" onChange={searchBooks}/>
+            <input
+              type="text"
+              placeholder="Search by title or author"
+              onChange={searchBooks}
+            />
           </div>
         </div>
         <div className="search-books-results">
@@ -36,8 +41,8 @@ class Search extends Component {
           </ol>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Search
+export default Search;

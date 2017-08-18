@@ -1,16 +1,15 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import Bookshelf from "./Bookshelf";
 
 function ListBooks(props) {
-
   ListBooks.PropTypes = {
     getBookshelf: PropTypes.func.isRequired,
     changeBookshelf: PropTypes.func.isRequired,
     currentlyReading: PropTypes.array.isRequired,
     wantToRead: PropTypes.array.isRequired,
     read: PropTypes.array.isRequired
-  }
+  };
 
   return (
     <div className="list-books">
