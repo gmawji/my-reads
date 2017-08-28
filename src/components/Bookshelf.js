@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Book from "./Book";
 
@@ -16,6 +15,7 @@ function Bookshelf(props) {
       <h2 className="bookshelf-title">
         {props.shelfTitle}
       </h2>
+      <hr className="bookshelf-break"/>
       <div className="bookshelf-books">
         <ol className="books-grid">
           {props.books.map(book =>
@@ -28,9 +28,6 @@ function Bookshelf(props) {
             </li>
           )}
         </ol>
-      </div>
-      <div className="open-search">
-        <Link to="/search">Add a book</Link>
       </div>
     </div>
   );
