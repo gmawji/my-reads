@@ -7,3 +7,6 @@ It is very simple to run this app locally as long as you have nodejs installed.
 2. Open the downloaded/clone directory in terminal
 3. Type `npm install` - This will install the required packages and make take some time.
 4. Type `npm start`
+
+## Credits
+[Hover.css](https://github.com/IanLunn/Hover) for some awesome subtle animations
