@@ -16,7 +16,7 @@ class Search extends Component {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <Link className="close-search" to="/">
+          <Link className="close-search hvr-pop" to="/">
             Close
           </Link>
           <div className="search-books-input-wrapper">

@@ -18,7 +18,7 @@ function ListBooks(props) {
         <div className="list-books-title">
           <h1>Bookshelf App</h1>
         </div>
-        <div className="open-search">
+        <div className="open-search hvr-pop">
           <Link to="/search">Add a book</Link>
         </div>
       </div>
