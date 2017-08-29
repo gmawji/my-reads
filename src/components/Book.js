@@ -18,7 +18,7 @@ function Book(props) {
             backgroundImage: `url(${props.book.imageLinks.thumbnail})`
           }}
         />
-        <div className="book-shelf-changer">
+        <div className="book-shelf-changer hvr-push">
           <select
             defaultValue={props.getBookshelf(props.book.id)}
             onChange={e => props.changeBookshelf(e.target.value, props.book)}
