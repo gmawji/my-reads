@@ -210,7 +210,9 @@ span {
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
 }
-.hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
+.hvr-pop:hover,
+.hvr-pop:focus,
+.hvr-pop:active {
   -webkit-animation-name: hvr-pop;
   animation-name: hvr-pop;
   -webkit-animation-duration: 0.3s;
@@ -249,7 +251,9 @@ span {
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
 }
-.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+.hvr-push:hover,
+.hvr-push:focus,
+.hvr-push:active {
   -webkit-animation-name: hvr-push;
   animation-name: hvr-push;
   -webkit-animation-duration: 0.3s;

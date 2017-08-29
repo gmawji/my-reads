@@ -15,7 +15,7 @@ function Bookshelf(props) {
       <h2 className="bookshelf-title">
         {props.shelfTitle}
       </h2>
-      <hr className="bookshelf-break"/>
+      <hr className="bookshelf-break" />
       <div className="bookshelf-books">
         <ol className="books-grid">
           {props.books.map(book =>
