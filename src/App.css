@@ -1,6 +1,9 @@
+/* Cool font */
 @import url('https://fonts.googleapis.com/css?family=Exo+2:200,300,400');
 
-html, body, .root {
+html,
+body,
+.root {
   height: 100%;
 }
 body {
@@ -9,7 +12,8 @@ body {
   width: auto !important;
   width: 345px;
 }
-body, .app {
+body,
+.app {
   background: #0b2535;
   font-family: 'Exo 2', sans-serif;
 }
@@ -116,9 +120,6 @@ span {
   font-weight: 100;
   color: #e7e7e7;
 }
-.book-authors{
-  color: #
-}
 .book-shelf-changer {
   position: relative;
   bottom: -10px;
@@ -131,7 +132,7 @@ span {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .book-shelf-changer select {
   width: 100%;
@@ -140,7 +141,7 @@ span {
   cursor: pointer;
 }
 .book-cover {
-  box-shadow: 0 4px 5px rgba(0,0,0,0.36), 0 3px 6px rgba(0,0,0,0.33);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.36), 0 3px 6px rgba(0, 0, 0, 0.33);
 }
 
 /* search */
@@ -157,7 +158,7 @@ span {
   top: 0;
   left: 0;
   z-index: 5;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 .search-books-input-wrapper {
   flex: 1;
